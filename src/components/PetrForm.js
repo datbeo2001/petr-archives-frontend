@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import dayjs from 'dayjs';
 import Stack from '@mui/material/Stack';
 import { TextField, Grid, Button } from '@mui/material';
@@ -159,7 +159,7 @@ const PetrForm = () => {
                     inputData.append('instagram', formData['ig-handle']);
                     console.log(inputData);
 
-                    fetch('http://localhost:8000/create-sticker', {
+                    fetch(`${process.env.REACT_APP_API_URL}/create-sticker`, {
                         method: 'POST',
                         body: inputData,
                     })

@@ -1,14 +1,12 @@
 import { React, useState, useEffect } from 'react';
 import styles from './Gallery.module.css';
 import { ImageList, ImageListItem, ImageListItemBar } from '@mui/material';
-import { Link as RRLink } from 'react-router-dom';
-import { Link } from '@mui/material';
 
 const Gallery = () => {
     const [imageList, setImageList] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:8000/get-data', {
+        fetch(`${process.env.REACT_APP_API_URL}/get-data`, {
             method: 'GET',
             mode: 'cors',
         })
