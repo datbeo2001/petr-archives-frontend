@@ -7,7 +7,6 @@ import React from 'react';
 
 function App() {
     return (
-
         <React.StrictMode>
             <BrowserRouter>
                 <div className="App">
